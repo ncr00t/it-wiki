@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.text_field :title, class: 'form-control', placeholder: 'Title of Article' %>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="form-group">
+    <%= form.text_area :body, class: 'form-control', placeholder: 'Article Body' %>
   </div>
 
-  <div class="field">
-    <%= form.label :image_path %>
-    <%= form.text_field :image_path %>
+  <div class="form-group">
+    <%= form.text_field :image_path,  class: 'form-control', placeholder: 'Image URL' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: 'btn btn-default btn-primary' %>
   </div>
 <% end %>

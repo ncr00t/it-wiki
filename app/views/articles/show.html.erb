@@ -1,19 +1,20 @@
+<style media="screen">
+  img {
+      max-width: 200px;
+      max-height: 200px;
+  }
+</style>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h1><%= @article.title %></h1>
 
 <p>
-  <strong>Body:</strong>
+  <%= @article.image_path %>
   <%= @article.body %>
 </p>
 
-<p>
-  <strong>Image path:</strong>
-  <%= @article.image_path %>
-</p>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_article_path(@article) %>
+<% end %>  
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
