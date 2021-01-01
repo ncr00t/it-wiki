@@ -5,7 +5,7 @@ application up and running.
 
 ## System configuration
 
-Webpacker version: 5.2.1
-Rails version: 6.1.0
-Ruby version: 2.7.1
-Node version: v10.17.0
+* Webpacker version: 5.2.1
+* Rails version: 6.1.0
+* Ruby version: 2.7.1
+* Node version: v10.17.0
