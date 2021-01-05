@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find_by_id(params['id'])
+    return redirect_to(:controller => 'main', :action => 'index') unless @article
   end
   
   def new
