@@ -1,3 +1,15 @@
+<script>
+    function isEmptyField(field) {
+        return field.val() == 0;
+    }
+
+    function validateForm() {
+        if (isEmptyField($('#article_theme_id'))) {
+            alert('Please choose a theme for new article.');
+        }
+    }
+</script>
+
 <h1>New Article</h1>
 
 <%= render 'form', article: @article %>

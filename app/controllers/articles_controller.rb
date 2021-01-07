@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by_id(params['id'])
-    return redirect_to(:controller => 'main', :action => 'index') unless @article
+    redirect_to(:action => 'index') unless @article
   end
   
   def new
@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(article_params)
-    @article.errors unless @article.save!
+    redirect_to(:action => 'index') if @article.save
   end
   
   def update
@@ -50,6 +50,6 @@ class ArticlesController < ApplicationController
     end
   
     def article_params
-      params.require(:article).permit(:title, :body, :image_path)
+      params.require(:article).permit(:title, :body, :image_path, :theme_id)
     end
 end
