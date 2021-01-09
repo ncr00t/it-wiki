@@ -3,7 +3,14 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
-    @articles = Article.all.order("created_at DESC")
+    if params[:theme].blank?
+      @articles = Article.all
+                         .order("created_at DESC")
+    else
+      theme = Theme.where(name: params[:theme]).first
+      @articles = Article.where(theme_id: theme.id)
+                         .order("created_at DESC") if theme
+    end
   end
 
   def show
