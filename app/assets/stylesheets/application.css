@@ -2,6 +2,9 @@
  *= require_tree .
  *= require_self
  */
+
+//= require active_storage_drag_and_drop
+@import "active_storage_drag_and_drop";
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");/*!
   * bootswatch v3.3.6
   * Homepage: http://bootswatch.com

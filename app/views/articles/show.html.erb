@@ -1,7 +1,7 @@
 <style media="screen">
   img {
-      max-width: 200px;
-      max-height: 200px;
+      max-width: 400px;
+      max-height: 400px;
   }
 </style>
 <p id="notice"><%= notice %></p>
@@ -9,7 +9,9 @@
 <h1><%= @article.title %></h1>
 
 <p>
-  <%= @article.image_path %>
+  <% image = @article.image %>
+  <%= image_tag image, class: 'd-block w-100' if image.persisted? %>
+  <br>
   <%= @article.body %>
 </p>
 
