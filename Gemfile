@@ -12,10 +12,7 @@ gem 'mini_magick'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.0'
 gem 'sass-rails', '>= 6'
-gem 'sqlite3', '~> 1.4'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.7'
-gem 'jquery-rails'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
@@ -23,21 +20,21 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rspec-rails'
-  gem 'web-console', '>= 4.1.0'
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rspec-rails'
+  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'sqlite3', '~> 1.4'
   gem 'spring'
+  gem 'web-console', '>= 4.1.0'
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
-  # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
