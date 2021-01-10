@@ -14,4 +14,9 @@ class Article < ApplicationRecord
                       .order("created_at DESC")
     articles
   end
+
+  def self.get_articles_by_letters(letters)
+    sanitize_letters = "%#{sanitize_sql_like(letters)}%"
+    Article.where(["title LIKE ? OR body LIKE ?", sanitize_letters, sanitize_letters])
+  end
 end
