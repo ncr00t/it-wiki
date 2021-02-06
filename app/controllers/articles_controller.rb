@@ -31,10 +31,8 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,17 +41,16 @@ class ArticlesController < ApplicationController
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
   private
 
-    def set_article
-      @article = Article.find(params[:id])
-    end
+  def set_article
+    @article = Article.find(params[:id])
+  end
   
-    def article_params
-      params.require(:article).permit(:title, :body, :image, :theme_id)
-    end
+  def article_params
+    params.require(:article).permit(:title, :body, :image, :theme_id)
+  end
 end

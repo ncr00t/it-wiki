@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
 gem 'activeadmin'
-gem 'active_storage_drag_and_drop'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'carrierwave'
 gem 'devise'

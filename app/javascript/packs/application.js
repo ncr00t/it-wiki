@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
-import "../stylesheets/application"
 
 //= require active_storage_drag_and_drop
 
