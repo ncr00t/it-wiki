@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+  default_scope { order(name: :asc) }
+
   belongs_to :user
   belongs_to :theme
 
@@ -8,11 +10,9 @@ class Article < ApplicationRecord
   validates :body, presence: true
 
   def self.get_articles_by_theme(theme_name)
-    theme = Theme.where(name: theme_name).first
-    return nil unless theme
-    articles = Article.where(theme_id: theme.id)
-                      .order("created_at DESC")
-    articles
+    sanitize_name = sanitize_sql_like(theme_name)
+    Article.includes(:theme)
+           .where(themes: { name: sanitize_name })
   end
 
   def self.get_articles_by_letters(letters)

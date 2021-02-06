@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   
   def index
     if params[:theme].blank?
-      @articles = Article.all.order("created_at DESC")
+      @articles = Article.all
     else
       @articles = Article.get_articles_by_theme(params[:theme])
     end
