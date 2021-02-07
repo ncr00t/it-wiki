@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  default_scope { order(name: :asc) }
+  default_scope { order(title: :asc) }
 
   belongs_to :user
   belongs_to :theme
