@@ -1,11 +1,23 @@
-# README
+# IT Wiki
+Web application with articles separated by IT themes. (Ruby, Ruby on Rails, Active Record, PostgreSQL, HAML, JS) 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Getting Started
+These instructions will get you a copy of the project up and running on your local machine
 
-## System configuration
+Usage
+1. Clone the repository
 
-* Webpacker version: 5.2.1
-* Rails version: 6.1.0
-* Ruby version: 2.7.1
-* Node version: v10.17.0
+   git clone https://github.com/ncr00t/it-wiki.git
+
+2. rails db:create db:migrate
+
+3. rails s
+
+
+# About
+IT Wikipedia deployed to Heroku: https://it-wikipedia.herokuapp.com/
+
+# License
+
+Copyright (c) 2021 Ivanisenko Roman Licensed under the [MIT license](LICENSE).
+
